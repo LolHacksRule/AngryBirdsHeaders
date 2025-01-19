@@ -4,6 +4,8 @@
 #include <CloudServicesNativeSDK/cloud/core/Identity.h>
 #include <lang/Object.h>
 
+class GameLua;
+
 class CloudSync : public lang::Object
 {
 public:

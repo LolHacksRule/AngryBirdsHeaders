@@ -1,6 +1,10 @@
 #ifndef _COMMON_GETTIMESTAMP_HPP
 #define _COMMON_GETTIMESTAMP_HPP
 
+#include <string>
+#include <lang/Mutex.h>
+#include <lang/Thread.h>
+
 struct TimeStamp
 {
 	int year;	
@@ -12,12 +16,24 @@ struct TimeStamp
 class GetTimeStamp
 {
 public:
+	class BadReturnException : lang::Exception
+	{
+		BadReturnException();
+		BadReturnException(const lang::Format&);
+		virtual ~BadReturnException();
+	};
+	class NotYetStartedException : lang::Exception
+	{
+		NotYetStartedException();
+		NotYetStartedException(const lang::Format&);
+		virtual ~NotYetStartedException();
+	};
 	struct TaskReturn
 	{
 		TimeStamp stamp;
 		int errCode;
 	};
-	GetTimeStamp(const std::string& url, const std;:string& uid);
+	GetTimeStamp(const std::string& url, const std::string& uid);
 	
 	bool done();
 	

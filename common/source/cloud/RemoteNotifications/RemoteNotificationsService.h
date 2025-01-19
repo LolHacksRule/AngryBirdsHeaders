@@ -3,6 +3,7 @@
 
 #include <GameLua.h>
 #include "../RovioCloudManager.h"
+#include <pf/RemoteNotifications.h>
 
 class RemoteNotificationsService
 {

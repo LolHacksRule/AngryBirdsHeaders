@@ -4,13 +4,16 @@
 //Classic and Seasons
 
 #include <pf/TextInput.h>
-#include "GameLua.h"
+
+class GameLua;
+
+using namespace pf;
 
 class TextInput :
 	public pf::TextInputObserver
 {
 public:
-	void TextInput(std::string name, GameLua *gamelua);
+	void TextInput(std::string name, GameLua* gamelua);
 	~TextInput();
     
 	void activate(const std::string& string);

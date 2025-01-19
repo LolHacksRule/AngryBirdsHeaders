@@ -2,6 +2,9 @@
 #define _ROVIOCHANNELSERVICE_H
 
 #include <CloudServicesNativeSDK/include/channel/ChannelUtils.h>
+#include <lua/LuaObject.h>
+
+class IRovioCloudService;
 
 class RovioChannelService : lua::LuaObject, IRovioCloudService, private channel::ChannelListener
 {

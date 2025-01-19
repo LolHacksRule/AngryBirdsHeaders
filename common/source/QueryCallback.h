@@ -3,9 +3,11 @@
 
 #include <Box2D/Dynamics/b2Body.h> //Partial copy of B2D
 #include <Box2D/Dynamics/b2Vec2.h>
+#include <vector>
 
 class QueryCallback : public b2QueryCallback
 {
+public:
 	QueryCallback(const b2Vec2& point, std::vector<b2Body*>* objs, bool incStatic);
 
 	virtual ~QueryCallback();

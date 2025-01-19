@@ -3,13 +3,18 @@
 
 //Classic and Seasons
 
-#include <lang/Object.h>
 //#include <lang/Ptr.h>
 #include <gr/Context.h>
 #include <framework/App.h>
-#include <framework/OSInterface.h>
-#include "GameLua.h"
+//#include "GameLua.h"
 #include "apprater/Apprater.h"
+
+namespace lua {
+	class LuaState;
+}
+
+//class Apprater;
+class GameLua;
 
 class GameApp :
 	public framework::App
@@ -34,7 +39,7 @@ public:
 	std::string getDeviceModel();
 	bool isHDVersion();
 	void changeMultitouchState(); //Only has code on PC/Mac
-	void GameApp(gr::Context *context, framework::OSInterface *os);
+	void GameApp(gr::Context* context, framework::OSInterface* os);
 	Context* m_context;
 	bool m_fullscreen;
 	float m_scale;
@@ -67,8 +72,8 @@ protected:
 	lang::Ptr<game::LuaResources> m_resources;
 	std::vector<lang::Ptr<gr::Shader>> m_preloadedShaders;
 	
-	bool m_keyPressedTemp[131];
-	bool m_keyReleasedTemp[131];
+	bool m_keyPressedTemp[KEY_COUNT];
+	bool m_keyReleasedTemp[KEY_COUNT];
 	
 	Apprater m_apprater;
 };

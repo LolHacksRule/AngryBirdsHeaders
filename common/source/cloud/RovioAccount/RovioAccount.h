@@ -1,7 +1,7 @@
 #ifndef _ROVIOACCOUNT_H
 #define _ROVIOACCOUNT_H
 
-#include <GameLua.h>
+#include <CloudSync.h>
 
 class RovioAccount
 {

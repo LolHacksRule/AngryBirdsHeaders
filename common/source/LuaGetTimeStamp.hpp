@@ -2,6 +2,7 @@
 #define _COMMON_LUAGETTIMESTAMP_HPP
 
 #include "GetTimeStamp.hpp"
+#include "LuaManager.hpp"
 
 class LuaGetTimeStamp
 {

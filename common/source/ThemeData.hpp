@@ -1,29 +1,16 @@
 #ifndef _COMMON_THEMEDATA_HPP
 #define _COMMON_THEMEDATA_HPP
 
-#include <game/Sprite.h>
+#include <game/Resources.h>
 #include <lua/LuaTable.h>
 
 using namespace game;
 using namespace lua;
 
-struct ThemeSpriteData
-{
-public:
-	game::Sprite *sprite;
-	float x;
-	float y;
-	float speedX;
-	float scaleX;
-	float scaleY;
-	float angle;
-	std::string name;
-};
-
 class ThemeLayerData
 {
 public:
-	ThemeLayerData(const lua::LuaTable& layerTable, game::Resources& res)
+	ThemeLayerData(const lua::LuaTable& layerTable, game::Resources& res);
 	std::string sheet;
 	std::string sprite;
 
@@ -48,6 +35,19 @@ public:
 
 	bool fillBelow;
 	uint8_t fillColor[4];
+};
+
+struct ThemeSpriteData
+{
+public:
+	game::Sprite* sprite;
+	float x;
+	float y;
+	float speedX;
+	float scaleX;
+	float scaleY;
+	float angle;
+	std::string name;
 };
 
 class ThemeData

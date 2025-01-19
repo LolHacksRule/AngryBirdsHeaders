@@ -1,5 +1,5 @@
-#ifndef COMMON_FILEUTIL_H
-#define COMMON_FILEUTIL_H
+#ifndef _COMMON_FILEUTIL_H
+#define _COMMON_FILEUTIL_H
 
 #include <io/InputStream.h>
 
@@ -10,7 +10,7 @@ public:
 	
 	void decrypt(const std::vector<unsigned char>& in, std::vector<unsigned char>& out);
 	
-	void decompress(InputStream& input, std::vector<unsigned char>& output);
+	void decompress(io::InputStream& input, std::vector<unsigned char>& output);
 	
 	//These might only be in ABClassic.
 	/*void loadFile(io::InputStream&);

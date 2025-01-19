@@ -36,7 +36,7 @@ public:
 private:
 		math::float4 bounds;
 	};
-	struct RectSubtraction
+	class RectSubtraction
 	{
 public:
 		RectSubtraction(const particle::Rect& a, const particle::Rect& b);

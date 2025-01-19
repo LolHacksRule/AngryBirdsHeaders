@@ -3,6 +3,9 @@
 
 #include <RovioShelf.h>
 #include "../../LuaManager.h"
+#include <lua/LuaObject.h>
+
+using namespace lua;
 
 class LuaRovioShelf
 {

@@ -3,6 +3,7 @@
 
 #include "../../GameLua.h"
 #include <lang/Ptr.h>
+#include <cloud/Payment/LuaCloudPayment.hpp>
 
 class CloudPayment
 {

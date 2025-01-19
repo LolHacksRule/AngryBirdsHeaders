@@ -2,6 +2,7 @@
 #define _COMMON_CLOUD_ROVIOCLOUDMANAGER_H
 
 #include <lang/Object.h>
+#include "cloud/Payment/CloudPayment.hpp"
 
 class RovioCloudManager :
 	public lang::Object
@@ -27,8 +28,8 @@ public:
 	
 	CloudPayment& payment();
 private:
-	GameLua *m_gameLua;
-	CloudPayment *m_cloudPayment;
+	GameLua* m_gameLua;
+	CloudPayment* m_cloudPayment;
 	std::tr1::shared_ptr<CloudConfiguration> m_cloudConfiguration;
 	bool m_hasFetchedConfiguration;
 	std::map<std::string, std::tr1::shared_ptr<IRovioCloudService>> m_services;

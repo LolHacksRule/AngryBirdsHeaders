@@ -1,7 +1,6 @@
 #ifndef _COMMON_SPOTLIGHT_H
 #define _COMMON_SPOTLIGHT_H
 
-#include <math/float4x4.h>
 #include <math/float2.h>
 #include <gr/Context.h>
 #include <gr/Shader.h>
@@ -19,7 +18,7 @@ private:
 	math::float2 m_velocity;
 	math::float2 m_acceleration;
 	gr::Context *m_context;
-	lang::Ptr<Shader> m_shader;
+	lang::Ptr<gr::Shader> m_shader;
 }
 
 #endif

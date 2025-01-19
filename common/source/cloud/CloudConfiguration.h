@@ -28,11 +28,11 @@ private:
 	};
 	std::deque<CloudConfiguration::LoginCallback> m_loginCallbacks;
 public:
-	CloudConfiguration(RovioCloudManager* cloudManager, GameLua* gamelua, const std::string id, const std::string version, const std::string key, const std::string customer, const std::string definition);
+	CloudConfiguration(RovioCloudManager* cloudManager, GameLua* gamelua, const std::string& id, const std::string& version, const std::string& key, const std::string& customer, const std::string& definition);
 	~CloudConfiguration();
 	lang::Ptr<rcs::Identity> getIdentity();
 	bool isServiceAvailable(const std::string& serviceName);
-	void fetchCloudConfiguration(const std::string& serviceName);
+	void fetchCloudConfiguration();
 	const ServiceConfiguration& getServiceConfiguration(const std::string& );
 	bool isConfigurationLoaded();
 	void setConfigurationLoaded(bool);

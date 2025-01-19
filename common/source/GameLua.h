@@ -1,7 +1,6 @@
 #ifndef _GAMELUA_H
 #define _GAMELUA_H
 
-#include <lang/Object.h>
 #include <game/Anchor.h>
 #include <game/LuaResources.h>
 #include "GameObject.hpp"
@@ -9,6 +8,14 @@
 #include <lua/LuaState.h>
 #include <b2Joint.h>
 #include <b2Body.h>
+#include <lang/FastDelegate.h>
+#include "DebugConsole.h"
+#include "pf/AppSettings.h"
+#include "cloud/RovioCloudManager.h"
+//#include "ObjectTeleporter.h"
+
+class ObjectTeleporter;
+class NookStoreStatusListener;
 
 struct GameLuaConfig
 {
@@ -24,10 +31,10 @@ struct GameLuaConfig
 };
 
 class GameLua :
-	public lang::Object, lua::LuaObject
+	public lua::LuaObject, b2ContactListener, b2ContactFilter, pf::VideoPlayerListener, pf::LocalNotificationsListener, NookStoreStatusListener
 {
 public:
-	GameLua(framework::App *app, lang::Ptr<game::LuaResources> resources, lua::LuaState *lua, gr::Context *context, const GameLuaConfig& config);
+	GameLua(framework::App* app, lang::Ptr<game::LuaResources> resources, lua::LuaState *lua, gr::Context *context, const GameLuaConfig& config);
 	virtual ~GameLua();
 	
 	struct jointData //Why is this lowercase
@@ -38,10 +45,9 @@ public:
 		b2Joint *joint;
 		int type;
 	};
-	class LevelAvailabilityCheckData
+	struct LevelAvailabilityCheckData
 	{
 	public:
-		LevelAvailabilityCheckData();
 		void reset();
 		std::string m_today;
 		int m_timeToNext;

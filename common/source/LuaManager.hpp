@@ -1,7 +1,7 @@
 #ifndef _COMMON_LUAMANAGER_HPP
 #define _COMMON_LUAMANAGER_HPP
 
-#include <lua/LuaTable.h>
+#include <lua/LuaObject.h>
 
 class LuaManager //Classic and Seasons
 {

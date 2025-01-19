@@ -4,7 +4,6 @@
 //Classic, Friends and Seasons
 
 #include "TextInput.h"
-#include "GameLua.h"
 
 class DebugConsole :
 	public pf::TextInputObserver

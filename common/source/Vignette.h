@@ -1,10 +1,8 @@
-#ifndef COMMON_VIGNETTE_H
-#define COMMON_VIGNETTE_H
+#ifndef _COMMON_VIGNETTE_H
+#define _COMMON_VIGNETTE_H
 
-#include <lang/Ptr.h>
 #include <lang/Object.h>
 #include <gr/Context.h>
-#include <gr/Shader.h>
 
 class Vignette :
 	public lang::Object

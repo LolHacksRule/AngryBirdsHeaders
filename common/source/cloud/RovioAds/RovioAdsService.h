@@ -27,12 +27,12 @@ public:
 	
 	virtual void onRewardResult(const std::string& placement, rcs::ads::RewardListener::Result result);
 	
-	virtual void onRewardResult(const std::string& placement, rcs::ads::RewardListener::Result result const std::string& voucherId);
+	virtual void onRewardResult(const std::string& placement, rcs::ads::RewardListener::Result result, const std::string& voucherId);
 	
 	virtual void initialize();
 	virtual void onGameActivated(bool active);
 	virtual bool isAdditionalViewActive() const;
-	virtual std:string getServiceName() const;
+	virtual std::string getServiceName() const;
 	
 	virtual void onStateChanged(const std::string& placement, rcs::ads::Manager::AdState state);
 	virtual void onSizeChanged(const std::string& placement, int width, int height);

@@ -1,13 +1,16 @@
-#ifndef _GAMEAPP_H
-#define _GAMEAPP_H
+#ifndef _COMMON_GAMEAPP_H
+#define _COMMON_GAMEAPP_H
 
 //Classic and Seasons
 
 //#include <lang/Ptr.h>
-#include <gr/Context.h>
+#include <gr/all.h>
 #include <framework/App.h>
 //#include "GameLua.h"
 #include "apprater/Apprater.h"
+//#include "LuaManager.hpp"
+
+#include <flurry/Flurry.h>
 
 namespace lua {
 	class LuaState;
@@ -15,6 +18,17 @@ namespace lua {
 
 //class Apprater;
 class GameLua;
+
+static std::string s_datapath;
+static std::string s_imagePath;
+static std::string s_fontPath;
+static std::string s_audioPath;
+static std::string s_localizationPath;
+static std::string s_levelPath;
+static std::string s_scriptPath;
+static std::string s_commonScriptPath;
+static std::string s_shaderPath;
+static std::string s_deviceModel; //iPhone in Seasons 4.1.0
 
 class GameApp :
 	public framework::App
@@ -34,9 +48,9 @@ public:
 	virtual void mouseWheel(int ticks);
 	virtual void orientationChanged();
 	void toggleZoomSteps(float minZoom, float maxZoom, short steps);
-	GameLua* getGameLua() const;
+	GameLua* getGameLua() const { return m_gameLua; }
 	virtual bool safeToQuit() const;
-	std::string getDeviceModel();
+	std::string getDeviceModel() { return s_deviceModel; }
 	bool isHDVersion();
 	void changeMultitouchState(); //Only has code on PC/Mac
 	void GameApp(gr::Context* context, framework::OSInterface* os);

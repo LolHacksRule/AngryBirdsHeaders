@@ -1,5 +1,5 @@
-#ifndef _ROVIOADSSERVICE_H
-#define _ROVIOADSSERVICE_H
+#ifndef _COMMON_CLOUD_ROVIOADSSERVICE_H
+#define _COMMON_CLOUD_ROVIOADSSERVICE_H
 
 #include <GameLua.h>
 #include "../RovioCloudManager.h"

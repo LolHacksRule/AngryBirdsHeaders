@@ -4,6 +4,8 @@
 #include <lua/LuaObject.h>
 #include <game/Resources.h>
 
+using namespace lua;
+
 class DynamicHandler :
 	public lua::LuaObject
 {

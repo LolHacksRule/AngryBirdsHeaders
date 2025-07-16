@@ -1,5 +1,5 @@
-#ifndef _GAMELUA_H
-#define _GAMELUA_H
+#ifndef _COMMON_GAMELUA_H
+#define _COMMON_GAMELUA_H
 
 #include <game/Anchor.h>
 #include <game/LuaResources.h>

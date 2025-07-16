@@ -1,5 +1,5 @@
-#ifndef _ROVIOCHANNELSERVICE_H
-#define _ROVIOCHANNELSERVICE_H
+#ifndef _COMMON_CLOUD_ROVIOCHANNELSERVICE_H
+#define _COMMON_CLOUD_ROVIOCHANNELSERVICE_H
 
 #include <CloudServicesNativeSDK/include/channel/ChannelUtils.h>
 #include <lua/LuaObject.h>

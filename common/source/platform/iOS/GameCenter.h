@@ -1,5 +1,5 @@
-#ifndef _IOS_GAMECENTER_H
-#define _IOS_GAMECENTER_H
+#ifndef _COMMON_PLATFORM_IOS_GAMECENTER_H
+#define _COMMON_PLATFORM_IOS_GAMECENTER_H
 
 #include "GameApp.h"
 #include "GameLua.h"

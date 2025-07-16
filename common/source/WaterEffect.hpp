@@ -3,15 +3,17 @@
 
 #include <lua/LuaTable.h>
 
+using namespace lua;
+
 class WaterEffect //Classic and Seasons
 {
 public:
-	void WaterEffect(const lua::LuaTable& objects);
-	float waterLevel() const { return m_waterLevel; };
-	float killLevel() const { return m_killLevel; };
-	bool hasKillLevel() const { return m_hasKillLevel; };
-	bool isFreezing() const { return m_isFreezing; };
-	operator bool() const { return m_hasWater; };
+	void WaterEffect(const LuaTable& objects);
+	static float waterLevel() const;
+	static float killLevel() const;
+	static bool hasKillLevel() const;
+	static bool isFreezing() const;
+	operator bool() { return m_hasWater; };
 private:
 	bool m_hasWater;
 	bool m_hasKillLevel;

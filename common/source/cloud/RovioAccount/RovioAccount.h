@@ -1,5 +1,5 @@
-#ifndef _ROVIOACCOUNT_H
-#define _ROVIOACCOUNT_H
+#ifndef _COMMON_CLOUD_ROVIOACCOUNT_H
+#define _COMMON_CLOUD_ROVIOACCOUNT_H
 
 #include <CloudSync.h>
 

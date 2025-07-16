@@ -23,7 +23,7 @@ public:
 	virtual void inputChanged(const std::string& newString);
 private:
 	void updateLuaInput(const std::string& newString);
-	lang::Ptr(pf::TextInput) m_textInput;
+	lang::Ptr<pf::TextInput> m_textInput;
 	std::string n_name;
 	GameLua* m_gameLua;
 };

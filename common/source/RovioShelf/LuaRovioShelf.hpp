@@ -2,10 +2,13 @@
 #define _COMMON_LUAROVIOSHELF_HPP
 
 #include <RovioShelf.h>
-#include "../../LuaManager.h"
+#include "../../LuaManager.hpp"
+#include "../../cloud/RovioCloudManager.h"
 #include <lua/LuaObject.h>
+#include <gr/Context.h>
 
 using namespace lua;
+using namespace gr;
 
 class LuaRovioShelf
 {

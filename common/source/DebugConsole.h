@@ -22,7 +22,10 @@ private:
 	pf::TextInput* m_textInput;
 	GameLua* m_gameLua;
 	void updateLuaInput(const std::string& newString);
-	std::string getInput();
+	std::string getInput() //inline.
+	{
+		return m_textInput->isActive() ? m_textInput->input() : "";
+	}
 };
 
 #endif

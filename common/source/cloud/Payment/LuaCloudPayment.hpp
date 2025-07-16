@@ -1,8 +1,10 @@
 #ifndef _LUACLOUDPAYMENT_HPP
 #define _LUACLOUDPAYMENT_HPP
 
-#include <GameLua.h>
 #include "CloudPayment.hpp"
+#include "lua/LuaFunction.h"
+
+using namespace lua;
 
 class LuaCloudPayment :
 	CloudPayment::Director, lua::LuaObject

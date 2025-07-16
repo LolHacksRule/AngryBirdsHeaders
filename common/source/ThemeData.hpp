@@ -10,7 +10,7 @@ using namespace lua;
 class ThemeLayerData
 {
 public:
-	ThemeLayerData(const lua::LuaTable& layerTable, game::Resources& res);
+	ThemeLayerData(const LuaTable& layerTable, Resources& res);
 	std::string sheet;
 	std::string sprite;
 
@@ -40,7 +40,7 @@ public:
 struct ThemeSpriteData
 {
 public:
-	game::Sprite* sprite;
+	Sprite* sprite;
 	float x;
 	float y;
 	float speedX;
@@ -53,14 +53,14 @@ public:
 class ThemeData
 {
 public:
-	ThemeData(const lua::LuaTable& themeTable, game::Resources& res);
+	ThemeData(const LuaTable& themeTable, Resources& res);
 
 	ThemeData();
 
-	math::float3 bgTintColor;
-	math::float3 bgColor;
-	math::float3 groundColor;
-	math::float3 waterBottomColor;
+	float3 bgTintColor;
+	float3 bgColor;
+	float3 groundColor;
+	float3 waterBottomColor;
 
 	std::vector<ThemeLayerData> bgLayers;
 	std::vector<ThemeLayerData> fgLayers;

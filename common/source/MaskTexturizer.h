@@ -1,12 +1,14 @@
-#ifndef _MASKTEXTURIZER_H
-#define _MASKTEXTURIZER_H
+#ifndef _COMMON_MASKTEXTURIZER_H
+#define _COMMON_MASKTEXTURIZER_H
 
 //Classic and Seasons
 
 #include <lang/Object.h>
 #include <math/float4.h>
-#include <gr/Primitive.h>
-#include <gr/Texture.h>
+#include <gr/Context.h>
+
+using namespace gr;
+using namespace lang;
 
 namespace internal
 {

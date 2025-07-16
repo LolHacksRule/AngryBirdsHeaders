@@ -1,5 +1,5 @@
-#ifndef _ROVIOACCOUNT_CLOUDSYNC_H
-#define _ROVIOACCOUNT_CLOUDSYNC_H
+#ifndef _COMMON_CLOUD_ROVIOACCOUNT_CLOUDSYNC_H
+#define _COMMON_CLOUD_ROVIOACCOUNT_CLOUDSYNC_H
 
 #include <CloudServicesNativeSDK/cloud/core/Identity.h>
 #include <lang/Object.h>

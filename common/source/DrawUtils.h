@@ -3,6 +3,7 @@
 
 #include <gr/Context.h>
 #include <game/Sprite.h>
+#include <game/Resources.h>
 
 class DrawUtils :
 	public lang::Object
@@ -20,7 +21,10 @@ public:
 	void customGlyphRenderer(gr::Context* context, game::Sprite* sprite, float x, float y, math::float4 color, gr::Shader* shader);
 	void drawThemeSpriteTinted(game::Sprite* spr, float x, float y, const math::float2& scale, const math::float4& color);
 	void drawThemeSpriteTinted(const std::string& spriteId, float x, float y, const math::float2& scale, const math::float4& color);
-	bool platformSupportsShaders() const;
+	bool platformSupportsShaders() const
+	{
+		return m_platformSupportsShaders;
+	}
 	
 	gr::Shader* getInvertedMultiplyTextureShader();
 	gr::Shader* getMultiplyTextureShader();

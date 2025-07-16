@@ -4,12 +4,14 @@
 #include "../../GameLua.h"
 #include <lang/Ptr.h>
 #include <cloud/Payment/LuaCloudPayment.hpp>
+#include <functional> 
+#include <cloud/core/IdentityLevel2.h> 
 
 class CloudPayment
 {
 public:
 	typedef std::tr1::function<void ()> CloudPayment::InitSuccessCallback InitSuccessCallback; //?
-	typedef std::tr1::function<void ()> CloudPayment::InitFailureCallback InitFailureCallback; //?
+	typedef std::tr1::function<void (int, const std::string&)> CloudPayment::InitFailureCallback InitFailureCallback; //?
 	typedef std::tr1::function<void (bool)> CloudPayment::RestoreCallback RestoreCallback; //?
 	typedef std::tr1::function<void (rcs::payment::CodeStatus)> CloudPayment::RedeemCallback RedeemCallback; //?
 	struct InitCallback

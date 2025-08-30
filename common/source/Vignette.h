@@ -1,7 +1,6 @@
 #ifndef _COMMON_VIGNETTE_H
 #define _COMMON_VIGNETTE_H
 
-#include <lang/Object.h>
 #include <gr/Context.h>
 
 using namespace lang;

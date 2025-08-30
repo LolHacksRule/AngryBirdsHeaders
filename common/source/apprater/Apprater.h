@@ -2,7 +2,7 @@
 #define _COMMON_APPRATER_H
 
 #include <game/Resources.h>
-#include "../LuaManager.hpp"
+#include <LuaManager.hpp>
 
 class Apprater
 {

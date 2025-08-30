@@ -2,7 +2,6 @@
 #define _LUACLOUDPAYMENT_HPP
 
 #include "CloudPayment.hpp"
-#include "lua/LuaFunction.h"
 
 using namespace lua;
 

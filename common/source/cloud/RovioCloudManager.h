@@ -1,7 +1,6 @@
 #ifndef _COMMON_CLOUD_ROVIOCLOUDMANAGER_H
 #define _COMMON_CLOUD_ROVIOCLOUDMANAGER_H
 
-#include <lang/Object.h>
 #include "cloud/Payment/CloudPayment.hpp"
 
 class RovioCloudManager :

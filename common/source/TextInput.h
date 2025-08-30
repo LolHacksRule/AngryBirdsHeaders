@@ -7,8 +7,6 @@
 
 class GameLua;
 
-using namespace pf;
-
 class TextInput :
 	public pf::TextInputObserver
 {

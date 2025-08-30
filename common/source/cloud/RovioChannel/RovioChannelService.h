@@ -9,7 +9,7 @@ class IRovioCloudService;
 class RovioChannelService : lua::LuaObject, IRovioCloudService, private channel::ChannelListener
 {
 public:
-	RovioChannelService(shared_ptr<CloudConfiguration> cloudConfiguration, lua::LuaState* lua, game::Resources* resources, const std::string& audioPath, const std::vector<uchar>& encryptionKey);
+	RovioChannelService(std::tr1::shared_ptr<CloudConfiguration> cloudConfiguration, lua::LuaState* lua, game::Resources* resources, const std::string& audioPath, const std::vector<uchar>& encryptionKey);
 	virtual ~RovioChannelService();
 private:
 	lang::Ptr<channel::channel> m_channel;
@@ -22,7 +22,7 @@ private:
 	void callLoadFromUrl(const std::string& url, int width, int height);
 private:
 	RovioChannelService(const RovioChannelService&);
-	operator=(const RovioChannelService&);
+	RovioChannelService& operator=(const RovioChannelService&);
 
 	virtual void initialize();
 	virtual void onGameActivated(bool active);

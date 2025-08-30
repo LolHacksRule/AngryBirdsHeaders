@@ -5,7 +5,6 @@
 
 #include "RovioCloudManager.h"
 #include "../GameLua.h"
-#include <lang/Ptr.h>
 
 class CloudConfiguration
 {

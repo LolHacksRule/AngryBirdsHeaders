@@ -2,7 +2,7 @@
 #define _COMMON_CLOUD_ROVIOANALYTICSSERVICE_H
 
 #include <GameLua.h>
-#include <lua/LuaObject.h>
+#include <source/cloud/RovioChannel/RovioChannelService.h>
 
 class AnalyticsService : private IRovioCloudService, private lua::LuaObject
 {

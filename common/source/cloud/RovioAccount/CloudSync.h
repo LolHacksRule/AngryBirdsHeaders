@@ -1,8 +1,7 @@
 #ifndef _COMMON_CLOUD_ROVIOACCOUNT_CLOUDSYNC_H
 #define _COMMON_CLOUD_ROVIOACCOUNT_CLOUDSYNC_H
 
-#include <CloudServicesNativeSDK/cloud/core/Identity.h>
-#include <lang/Object.h>
+#include <external/CloudServicesNativeSDK/cloud/core/Identity.h>
 
 class GameLua;
 

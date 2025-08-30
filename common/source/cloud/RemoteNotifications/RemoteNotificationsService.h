@@ -2,8 +2,6 @@
 #define _COMMON_CLOUD_REMOTENOTIFICATIONSSERVICE_H
 
 #include <GameLua.h>
-#include "../RovioCloudManager.h"
-#include <pf/RemoteNotifications.h>
 
 class RemoteNotificationsService
 {

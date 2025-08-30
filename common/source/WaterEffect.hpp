@@ -9,10 +9,10 @@ class WaterEffect //Classic and Seasons
 {
 public:
 	void WaterEffect(const LuaTable& objects);
-	static float waterLevel() const;
-	static float killLevel() const;
-	static bool hasKillLevel() const;
-	static bool isFreezing() const;
+	float waterLevel() const;
+	float killLevel() const;
+	bool hasKillLevel() const;
+	bool isFreezing() const;
 	operator bool() { return m_hasWater; };
 private:
 	bool m_hasWater;

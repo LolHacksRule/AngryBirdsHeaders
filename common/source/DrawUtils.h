@@ -1,8 +1,6 @@
 #ifndef _COMMON_DRAWUTILS_H
 #define _COMMON_DRAWUTILS_H
 
-#include <gr/Context.h>
-#include <game/Sprite.h>
 #include <game/Resources.h>
 
 class DrawUtils :

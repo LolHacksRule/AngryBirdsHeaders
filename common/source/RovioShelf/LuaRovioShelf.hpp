@@ -4,8 +4,6 @@
 #include <RovioShelf.h>
 #include "../../LuaManager.hpp"
 #include "../../cloud/RovioCloudManager.h"
-#include <lua/LuaObject.h>
-#include <gr/Context.h>
 
 using namespace lua;
 using namespace gr;

@@ -1,10 +1,7 @@
 #ifndef _COMMON_SPOTLIGHT_H
 #define _COMMON_SPOTLIGHT_H
 
-#include <math/float2.h>
 #include <gr/Context.h>
-#include <gr/Shader.h>
-#include <lang/Ptr.h>
 
 using namespace io;
 using namespace math;

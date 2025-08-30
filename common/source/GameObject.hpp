@@ -3,9 +3,7 @@
 
 //Classic and Seasons
 
-#include <game/Sprite.h>
 #include <game/CompoSprite.h>
-#include <lang/Object.h>
 #include <lua/LuaTable.h>
 
 enum ColliderType

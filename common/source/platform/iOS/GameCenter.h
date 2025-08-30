@@ -1,9 +1,7 @@
 #ifndef _COMMON_PLATFORM_IOS_GAMECENTER_H
 #define _COMMON_PLATFORM_IOS_GAMECENTER_H
 
-#include "GameApp.h"
-#include "GameLua.h"
-#include <gr/Context.h>
+#include <common/source/GameApp.h>
 
 class GameCenter
 {
@@ -65,7 +63,7 @@ public:
 	
 	void resumeUpdate();
 	
-	void setOrientation(gr::OrientationType orientation);
+	void setOrientation(gr::Context::OrientationType orientation);
 	
 	void setGCPopupAllowed(bool allowed);
 private:

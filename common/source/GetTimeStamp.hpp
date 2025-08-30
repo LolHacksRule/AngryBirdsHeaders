@@ -1,7 +1,6 @@
 #ifndef _COMMON_GETTIMESTAMP_HPP
 #define _COMMON_GETTIMESTAMP_HPP
 
-#include <string>
 #include <lang/Mutex.h>
 #include <lang/Thread.h>
 

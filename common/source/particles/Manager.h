@@ -5,9 +5,7 @@
 #include "Particle.h"
 #include "Utils.h"
 #include "Definition.h"
-#include <gr/Context.h>
 #include <game/Resources.h>
-#include <lua/LuaState.h>
 #include <lua/LuaObject.h>
 
 using namespace gr;

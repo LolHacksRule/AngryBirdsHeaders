@@ -2,7 +2,6 @@
 #define _CLOUDPAYMENT_HPP
 
 #include "../../GameLua.h"
-#include <lang/Ptr.h>
 #include <cloud/Payment/LuaCloudPayment.hpp>
 #include <functional> 
 #include <cloud/core/IdentityLevel2.h> 

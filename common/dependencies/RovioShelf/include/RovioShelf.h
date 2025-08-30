@@ -2,6 +2,7 @@
 #define ROVIOSHELF_H
 
 #include <gr/Color.h>
+#include <lang/Event.h>
 
 namespace rcs
 {

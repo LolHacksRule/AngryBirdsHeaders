@@ -3,8 +3,6 @@
 
 //Classic and Seasons
 
-#include <lang/Object.h>
-#include <math/float4.h>
 #include <gr/Context.h>
 
 using namespace gr;
@@ -50,7 +48,7 @@ public:
 
 
 private:
-	ImageMask& getMask(gr::Texture& texture);
+	internal::ImageMask& getMask(gr::Texture& texture);
 	gr::Context& m_context;
 	lang::Ptr<gr::Shader> m_shader;
 	bool m_isFreezing;

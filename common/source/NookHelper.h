@@ -16,7 +16,7 @@ class NookHelper :
 {
 public:
 	NookHelper();
-	virtual ~NookHelper();
+	~NookHelper();
 	
 	void setListener(NookStoreStatusListener* listener); //?
 	void notifyListener();

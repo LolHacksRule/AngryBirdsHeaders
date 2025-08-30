@@ -2,7 +2,6 @@
 #define _COMMON_PARTICLE_H
 
 #include <game/Sprite.h>
-#include <math/float2.h>
 
 namespace particle
 {

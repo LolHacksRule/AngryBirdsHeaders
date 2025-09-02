@@ -11,7 +11,7 @@ class TextInput :
 	public pf::TextInputObserver
 {
 public:
-	void TextInput(std::string name, GameLua* gamelua);
+	TextInput(std::string name, GameLua* gamelua);
 	~TextInput();
     
 	void activate(const std::string& string);

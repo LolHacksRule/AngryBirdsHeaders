@@ -32,11 +32,31 @@ static std::string s_deviceModel; //iPhone in Seasons 4.1.0
 
 class GameApp :
 	public framework::App
+	#if defined(PLATFORM_MAEMO) || defined (PLATFORM_QT)
+	, net::NFCListener
+	#endif
 {
 public:
 	GameApp(gr::Context* context, framework::OSInterface* os);
 	virtual ~GameApp();
 	
+#if defined(PLATFORM_MAEMO) || defined (PLATFORM_QT) //For versions less than Meego ABC 3.0.0. ONLY FOR REFERENCE.
+	virtual void dataTransferred(bool succeeded);
+	void initNFC();
+	void receiveData(lang::Array<unsigned char> data);
+	void releaseNFC();
+	virtual void remoteFound();
+	virtual void remoteLost();
+	virtual void tagLost();
+	virtual void tagDetected(const lang::String& uid);
+	struct AdMob; //Is this defined?
+	private:
+		io::FileBundle m_fileBundle;
+		AdMob m_adMob;
+		iAdDelegate m_iAd;
+		lang::Ptr<net::NFC> m_nfc;
+	public: //Really is only here so everything else is public
+#endif
 	virtual void update(float dt, gr::Context * context, int);
 	virtual void activate(bool active);
 	virtual bool activateAudio(bool active);

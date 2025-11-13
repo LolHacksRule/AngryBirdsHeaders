@@ -4,7 +4,7 @@
 #include <game/Sprite.h>
 #include <lang/Array.h>
 
-//Old impl of particles.
+//This is part of ABC <1.4.0 and ABS <2.3.0. Refer to the "common/source/particles" directory for the new implementation.
 
 struct ParticleData
 {
@@ -64,7 +64,7 @@ class Particles : public lua::LuaObject
 
 public:
 	Particles(lua::LuaState* lua, GameLua* game, game::Resources* resources);
-	virtual	~Particles();
+	~Particles();
 
 	void addParticles(lang::String definitionName, float amount, float x, float y, float w, float h, float angle, bool ignoreLimits, bool isWeather);
 	void clearAll();

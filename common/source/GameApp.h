@@ -38,35 +38,40 @@ class GameApp :
 {
 public:
 	GameApp(gr::Context* context, framework::OSInterface* os);
-	virtual ~GameApp();
+	~GameApp();
 	
 #if defined(PLATFORM_MAEMO) || defined (PLATFORM_QT) //For versions less than Meego ABC 3.0.0. ONLY FOR REFERENCE.
-	virtual void dataTransferred(bool succeeded);
+	virtual void dataTransferred(bool succeeded); //Present in ABC < 2.2.0, not seen in other releases.
+#ifdef ABFM //These native functions are exclusive to Free with Magic, they are possibly unofficial from Nokia's work on ABFM since their functions never appear in other releases at all.
 	void initNFC();
-	void receiveData(lang::Array<unsigned char> data);
 	void releaseNFC();
+#endif
+	void receiveData(lang::Array<unsigned char> data); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
 	virtual void remoteFound();
-	virtual void remoteLost();
-	virtual void tagLost();
-	virtual void tagDetected(const lang::String& uid);
+	virtual void remoteLost(); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
+	virtual void tagLost(); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
+	virtual void tagDetected(const lang::String& uid); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
 	struct AdMob; //Is this defined?
-	private:
-		io::FileBundle m_fileBundle;
-		AdMob m_adMob;
-		iAdDelegate m_iAd;
-		lang::Ptr<net::NFC> m_nfc;
+private:
+	io::FileBundle m_fileBundle;
+	AdMob m_adMob;
+	iAdDelegate m_iAd;
+#ifdef ABFM
+	lang::Ptr<net::NFC> m_nfc;
+#endif
+	
 	public: //Really is only here so everything else is public
 #endif
-	virtual void update(float dt, gr::Context * context, int);
-	virtual void activate(bool active);
-	virtual bool activateAudio(bool active);
-	virtual void loadFromUrl(const std::string& url);
-	virtual void mouseMove(int dx, int dy);
-	virtual void keyDown(KeyType key);
-	virtual void keyUp(KeyType key);
-	virtual void resolutionChanged(); //Only has code on PC/Mac
-	virtual void mouseWheel(int ticks);
-	virtual void orientationChanged();
+	void update(float dt, gr::Context * context, int);
+	void activate(bool active);
+	bool activateAudio(bool active);
+	void loadFromUrl(const std::string& url);
+	void mouseMove(int dx, int dy);
+	void keyDown(KeyType key);
+	void keyUp(KeyType key);
+	void resolutionChanged(); //Only has code on PC/Mac
+	void mouseWheel(int ticks);
+	void orientationChanged();
 	void toggleZoomSteps(float minZoom, float maxZoom, short steps);
 	GameLua* getGameLua() const { return m_gameLua; }
 	virtual bool safeToQuit() const;
@@ -103,7 +108,7 @@ protected:
 	lang::Ptr<flurry::Flurry> m_flurry;
 	lang::Ptr<flurry::FlurryLuaInterface> m_luaFlurry;
 	
-	lang::Ptr<game::LuaResources> m_resources;
+	lang::Ptr<game::LuaResources> m_resources; //ABC >1.6.0, ABFM, ABR, ABS, Stella, Space, SW, SW2, Croods
 	std::vector<lang::Ptr<gr::Shader>> m_preloadedShaders;
 	
 	bool m_keyPressedTemp[KEY_COUNT];

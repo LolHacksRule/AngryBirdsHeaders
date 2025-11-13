@@ -42,7 +42,7 @@ class GameLua :
 {
 public:
 	GameLua(framework::App* app, lang::Ptr<game::LuaResources> resources, lua::LuaState *lua, gr::Context *context, const GameLuaConfig& config);
-	virtual ~GameLua();
+	~GameLua();
 	
 	struct jointData //97, 37 in ABFM 1.1.5 Meego, Why is this lowercase
 	{
@@ -144,16 +144,19 @@ public:
 	b2Body* createBox(RenderObjectData* rod, lang::String name, lang::String sprite, float x, float y, float w, float h, float density, float friction, float restitution);
 	b2Body* createPolygon(RenderObjectData* rod, lang::String name, lang::String sprite, float x, float y, float w, float h, float density, float friction, float restitution);
 	
+	void fullScreenAdDisappeared(bool banner); //Unimplemented in Meego. ABC <2.3.0, ABR <1.4.2, ABS <3.0.1, Space <1.3.2, ABSW <1.0.2
+	void hideAdvertisement(); //ABC <2.3.0, ABR <1.4.2, ABS <3.0.1, Meego [unimplemented]
+	
+#if defined(PLATFORM_IOS) || defined(ABFM) //These functions only appear on iOS ABC <1.4.0, ABR <1.8.0, ABS <2.4.1, Space <1.5.2, SW <1.3.0 / SW Console and Trilogy but they do appear empty in ABFM, maybe ABFM was based off iOS-era source?
 	void enableiAds();
 	void disableiAds();
-	void fullScreenAdDisappeared(bool banner); //Unimplemented in Meego. Not in ?-1.4.3-1.6.3
-	void hideAdvertisement();
 	void hidingFinished();
-	void prepareiAd(iAdDelegate* iAd);
+	void prepareiAd(iAdDelegate* iAd); //Not in ABC, ABR <1.8.0, ABS <2.4.1, Space <1.5.2, SW <1.3.0, Trilogy
 	void requestAd();
 	void requestAdCallback();
 	void requestAndShowVideo();
 	void requestVideoAd();
+#endif
 	
 	void prepareAdMob(Admob* admob);
 	
@@ -162,10 +165,10 @@ public:
 	void drawSome(lang::String spriteName);
 	float getAngle(lang::String name);
 	
-	#ifdef ABFM //Functions exclusive to ABFM.
+#ifdef ABFM //Functions exclusive to ABFM.
 	void foundNFC(lang::String macAddress);
 	void toggleNFC(bool enable);
-	#endif
+#endif
 	
 	void showAdvertisement();
 	void showVideoAdvertisement();
@@ -202,7 +205,7 @@ public:
 	void logFlurryEventWithParam(lang::String eventName, lang::String paramName, lang::String paramValue);
 	void logFlurryEventWithParams(lang::String eventName, lang::String paramTable);
 	
-	#endif
+#endif
 	
 	struct ScoreData //221, 158 in ABFM 1.15 Meego
 	{
@@ -319,8 +322,8 @@ public:
 	
 	std::vector<unsigned char> m_variableKeyOld;
 	std::vector<unsigned char> m_variableKeyNew;
-	
-	GameCenter* m_gc;
+
+	GameCenter* m_gc; //Appears in ABFM
 	
 	std::string m_purchaseCallbackName;
 	
@@ -527,16 +530,16 @@ public:
 	void enableMotion(bool enable); //Dummied?
 	bool isMotionEnabled(); //Always false?
 	
-	bool registerKey(const std::string& key, const std::string& type, const std::string& url);
+	bool registerKey(FUSION_CUSTOM_STRING key, FUSION_CUSTOM_STRING type, FUSION_CUSTOM_STRING url); //Mangled symbol says it's not const.
 	bool verifyDeviceID(std::string id);
 	std::string getDeviceID();
 	int checkRegistrationResult(lua::LuaState* lua);
 	
 	bool hasSpriteImage(const std::string& , const std::string& ) const;
-	bool createSpriteImage(const *, int, io::FileFormat, const std::string& , const std::string& , float, float);
-	bool createSpriteFromData(const *, unsigned int, unsigned int, const std::string& , const std::string& , float, float);
+	bool createSpriteImage(const void *, int, io::FileFormat, const std::string&, const std::string&, float, float);
+	bool createSpriteFromData(const void *, unsigned int, unsigned int, const std::string&, const std::string&, float, float);
 	
-	void startURLThread(const std::string url);
+	void startURLThread(std::string url);
 	void checkForURLProc(const std::string& url);
 	
 	void checkURLCallbacks();

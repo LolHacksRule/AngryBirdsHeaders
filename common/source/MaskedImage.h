@@ -1,6 +1,6 @@
+#include <gr/Context.h>
 
-
-//Not in ABS410. Originally in gamerepo/include.
+//ABC > 1.2.2, ABC BBHD/PC, Seasons <3.3.0. Originally in gamerepo/include. Recovered from ABFM Meego.
 
 class MaskedImage : public lang::Object
 {

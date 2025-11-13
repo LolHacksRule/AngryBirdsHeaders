@@ -62,7 +62,7 @@ private:
 	
 	public: //Really is only here so everything else is public
 #endif
-	void update(float dt, gr::Context * context, int);
+	void update(float dt, gr::Context * context, int updateFlags);
 	void activate(bool active);
 	bool activateAudio(bool active);
 	void loadFromUrl(const std::string& url);

@@ -41,16 +41,16 @@ public:
 	~GameApp();
 	
 #if defined(PLATFORM_MAEMO) || defined (PLATFORM_QT) //For versions less than Meego ABC 3.0.0. ONLY FOR REFERENCE.
-	virtual void dataTransferred(bool succeeded); //Present in ABC < 2.2.0, not seen in other releases.
+	void dataTransferred(bool succeeded); //Present in ABC < 2.2.0, not seen in other releases.
 #ifdef ABFM //These native functions are exclusive to Free with Magic, they are possibly unofficial from Nokia's work on ABFM since their functions never appear in other releases at all.
 	void initNFC();
 	void releaseNFC();
 #endif
 	void receiveData(lang::Array<unsigned char> data); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
-	virtual void remoteFound();
-	virtual void remoteLost(); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
-	virtual void tagLost(); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
-	virtual void tagDetected(const lang::String& uid); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
+	void remoteFound();
+	void remoteLost(); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
+	void tagLost(); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
+	void tagDetected(const lang::String& uid); //Present in ABC < 2.2.0 and Croods 0.0.1 (TestFlight), not seen in other releases.
 	struct AdMob; //Is this defined?
 private:
 	io::FileBundle m_fileBundle;
@@ -74,7 +74,7 @@ private:
 	void orientationChanged();
 	void toggleZoomSteps(float minZoom, float maxZoom, short steps);
 	GameLua* getGameLua() const { return m_gameLua; }
-	virtual bool safeToQuit() const;
+	bool safeToQuit() const;
 	std::string getDeviceModel() { return s_deviceModel; }
 	bool isHDVersion();
 	void changeMultitouchState(); //Only has code on PC/Mac

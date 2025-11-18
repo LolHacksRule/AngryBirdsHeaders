@@ -4,7 +4,10 @@
 
 class MaskedImage : public lang::Object
 {
-	gr::Context* m_context;
+public:
+	MaskedImage(gr::Context* context);
+private:
+	gr::Context* m_context; //20
 	lang::Ptr<gr::Shader> m_shader;
 	gr::Image* m_image;
 	gr::Image* m_mask;
@@ -12,7 +15,6 @@ class MaskedImage : public lang::Object
 	FUSION_CUSTOM_VECTOR<math::float4> m_uv0;
 	FUSION_CUSTOM_VECTOR<math::float4> m_uv1;
 	
-	MaskedImage(gr::Context* context);
 	~MaskedImage();
 	void add(float dstX, float dstY, gr::Image* image, game::Sprite* mask);
 	void render();

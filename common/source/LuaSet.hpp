@@ -3,7 +3,7 @@
 
 #include <lua/LuaTable.h>
 
-class LuaSet
+namespace LuaSet
 {
 public: //not quite ready yet
 	/*template <class LuaType>

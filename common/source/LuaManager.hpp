@@ -3,7 +3,7 @@
 
 #include <lua/LuaObject.h>
 
-class LuaManager //Classic and Seasons
+class LuaManager //20 | Classic and Seasons
 {
 public:
 	LuaManager(lua::LuaState& luaState, std::vector<std::string> scriptPaths);

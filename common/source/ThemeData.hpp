@@ -7,9 +7,8 @@
 using namespace game;
 using namespace lua;
 
-class ThemeLayerData
+struct ThemeLayerData
 {
-public:
 	ThemeLayerData(const LuaTable& layerTable, Resources& res);
 	std::string sheet;
 	std::string sprite;

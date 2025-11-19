@@ -70,7 +70,7 @@ public:
 	void clearAll();
 	void draw(gr::Context* context, bool inGame);
 	void setHardLimit(float limit);
-	void setSoftLimit(float limit);
+	void setSoftLimit(float limit, float multiplier);
 	void update(float dt, bool inGame);
 	void updateWeather(float dt, bool inGame);
 };

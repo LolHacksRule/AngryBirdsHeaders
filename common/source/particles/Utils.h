@@ -3,18 +3,18 @@
 
 #include <math/float4.h>
 
-namespace particle
+namespace particle //9
 {
-	namespace System
+	namespace System //16
 	{
-		enum Enum
+		enum Enum //16
 		{
 			SCREEN,
 			WORLD,
 			COUNT
 		};
 	}
-	struct Rect
+	struct Rect //30
 	{
 public:
 		Rect(float bottom, float left, float top, float right);
@@ -36,7 +36,7 @@ public:
 private:
 		math::float4 bounds;
 	};
-	class RectSubtraction
+	struct RectSubtraction //54
 	{
 public:
 		RectSubtraction(const particle::Rect& a, const particle::Rect& b);
